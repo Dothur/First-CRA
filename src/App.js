@@ -1,5 +1,18 @@
-function App() {
-  return null;
-}
+import React from "react";
+import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+
+import { createBrowserRouter } from "react-router-dom";
+
+const App = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/movie/",
+    element: <Detail />,
+  },
+]);
 
 export default App;
