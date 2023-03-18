@@ -6,7 +6,7 @@ function Movie({ coverImg, title, summary, genres, id }) {
     <div>
       <img src={coverImg} alt={title} />
       <h2>
-        <Link to={`/movie/${id}`}>{title}</Link>
+        <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>{title}</Link>
       </h2>
       <p>{summary}</p>
       <ul>
@@ -19,11 +19,11 @@ function Movie({ coverImg, title, summary, genres, id }) {
 }
 
 Movie.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   coverImg: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default Movie;
